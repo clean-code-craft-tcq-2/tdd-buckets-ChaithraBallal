@@ -34,8 +34,8 @@ char* CalculateCurrentRanges( int InputCurrentRange[], int NumberofCurrentSample
 {
   char outputString[50];
   char* outputBuffer = outputString;
-  int lowCurrentValue = findLowerLimit(InputCurrentRange[],NumberofCurrentSamples);
-  int highCurrentValue = findUpperLimit(InputCurrentRange[],NumberofCurrentSamples);
+  int lowCurrentValue = findLowerLimit(InputCurrentRange,NumberofCurrentSamples);
+  int highCurrentValue = findUpperLimit(InputCurrentRange,NumberofCurrentSamples);
   sprintf(outputBuffer, "%d-%d,%d",lowCurrentValue,highCurrentValue,NumberofCurrentSamples);
   return outputBuffer;  
 }
