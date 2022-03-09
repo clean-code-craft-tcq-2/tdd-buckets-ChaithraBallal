@@ -14,5 +14,5 @@ TEST_CASE("Infers the output range for the given set of inputs")
   int NumberofCurrentSamples = (sizeof(InputCurrentRange))/(sizeof(InputCurrentRange[0]));
   ComputedRange = CalculateCurrentRanges(InputCurrentRange,NumberofCurrentSamples);
   result = strcmp(ComputedRange, "2-5,5");
-  assert(result == 0);
+  REQUIRE(result == 0);
 }
