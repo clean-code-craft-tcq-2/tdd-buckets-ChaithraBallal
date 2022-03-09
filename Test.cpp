@@ -12,7 +12,7 @@ TEST_CASE("Infers the output range for the given set of inputs")
   char* ComputedRange;
   int result;
   int NumberofCurrentSamples = (sizeof(InputCurrentRange))/(sizeof(InputCurrentRange[0]));
-  ComputedRange = CalculateCurrentRanges(InputCurrentRange[],NumberofCurrentSamples);
+  ComputedRange = CalculateCurrentRanges(InputCurrentRange,NumberofCurrentSamples);
   result = strcmp(ComputedRange, "2-5,5");
   REQUIRE(result == 0);
 }
