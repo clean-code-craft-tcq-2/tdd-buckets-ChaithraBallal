@@ -8,7 +8,7 @@ int findLowerLimit(int currentRange[], int NoofCurrentValues)
   int range;
   for(range=1; range<NoofCurrentValues; range++)
   {
-    if (lowerLimit < currentRange[range])
+    if (lowerLimit > currentRange[range])
     {
       lowerLimit = currentRange[range];
     }
@@ -22,7 +22,7 @@ int findUpperLimit(int currentRange[], int NoofCurrentValues)
   int range;
   for(range=1; range<NoofCurrentValues; range++)
   {
-    if (upperLimit > currentRange[range])
+    if (upperLimit < currentRange[range])
     {
        upperLimit = currentRange[range];
     }
@@ -34,8 +34,8 @@ char* CalculateCurrentRanges( int InputCurrentRange[], int NumberofCurrentSample
 {
   char outputString[50];
   char* outputBuffer = outputString;
-  int lowCurrentValue = findLowerLimit(InputCurrentRange,NumberofCurrentSamples);
-  int highCurrentValue = findUpperLimit(InputCurrentRange,NumberofCurrentSamples);
+  int lowCurrentValue = findLowerLimit(InputCurrentRange[],NumberofCurrentSamples);
+  int highCurrentValue = findUpperLimit(InputCurrentRange[],NumberofCurrentSamples);
   sprintf(outputBuffer, "%d-%d,%d",lowCurrentValue,highCurrentValue,NumberofCurrentSamples);
   return outputBuffer;  
 }
