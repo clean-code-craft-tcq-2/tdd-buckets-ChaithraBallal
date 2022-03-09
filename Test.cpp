@@ -25,7 +25,7 @@ TEST_CASE("Find the lower out of the array")
   REQUIRE(LowValue == 6);
 }
 
-TEST_CASE("Find the lower out of the array")
+TEST_CASE("Find the higher out of the array")
 {
   int InputCurrentRange[] = {15,26,19,99,9};
   int NoofValues = (sizeof(InputCurrentRange))/(sizeof(InputCurrentRange[0]));
