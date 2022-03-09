@@ -1,5 +1,7 @@
 #define CATCH_CONFIG_MAIN
+
 #include "test/catch.hpp"
+
 #include <stdio.h>
 #include "string.h"
 #include "MonitoringCharge.h"
