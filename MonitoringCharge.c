@@ -5,11 +5,12 @@
 int findLowerLimit(int* currentRange, int NoofCurrentValues)
 {
   int lowerLimit = currentRange[0];
-  for(i=1; i<NoofCurrentValues; i++)
+  int range;
+  for(range=1; range<NoofCurrentValues; range++)
   {
-    if (lowerLimit < currentRange[i])
+    if (lowerLimit < currentRange[range])
     {
-      lowerLimit = currentRange[i];
+      lowerLimit = currentRange[range];
     }
   }
   return lowerLimit;
@@ -18,11 +19,11 @@ int findLowerLimit(int* currentRange, int NoofCurrentValues)
 int findUpperLimit(int* currentRange, int NoofCurrentValues)
 {
   int upperLimit = currentRange[0];
-  for(i=1; i<NoofCurrentValues; i++)
+  for(range=1; range<NoofCurrentValues; range++)
   {
-    if (upperLimit > currentRange[i])
+    if (upperLimit > currentRange[range])
     {
-       upperLimit = currentRange[i];
+       upperLimit = currentRange[range];
     }
   }
   return upperLimit;
