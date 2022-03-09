@@ -7,12 +7,12 @@ int findLowerLimit(int* currentRange, int NoofCurrentValues)
   int lowerLimit = currentRange[0];
   for(i=1; i<NoofCurrentValues; i++)
   {
-    if (lowerlimit < currentRange[i])
+    if (lowerLimit < currentRange[i])
     {
-      lowerlimit = currentRange[i];
+      lowerLimit = currentRange[i];
     }
   }
-  return lowerlimit;
+  return lowerLimit;
 }
 
 int findUpperLimit(int* currentRange, int NoofCurrentValues)
@@ -28,7 +28,7 @@ int findUpperLimit(int* currentRange, int NoofCurrentValues)
   return upperLimit;
 }
 
-char* CalculateCurrentRanges( int* InputCurrentRange, int NumberofCurrentSamples)
+char CalculateCurrentRanges( int* InputCurrentRange, int NumberofCurrentSamples)
 {
   char outputBuffer;
   int lowCurrentValue = findLowerLimit(InputCurrentRange,NumberofCurrentSamples);
