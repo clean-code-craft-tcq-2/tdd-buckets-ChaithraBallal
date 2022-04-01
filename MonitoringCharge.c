@@ -51,7 +51,10 @@ float* funcA2DConverter(int InputAnalogCurrentValue[],int sizeofInput)
     {
       OutCurrent[i] = InvalidCurrentValue;        
     }
-    OutCurrent[i] = (10 * InputAnalogCurrentValue[i])/MaxcurrentValue;  
+    else
+    {
+       OutCurrent[i] = (10 * InputAnalogCurrentValue[i])/MaxcurrentValue;  
+    }
   }
   return OutCurrent;
 }
