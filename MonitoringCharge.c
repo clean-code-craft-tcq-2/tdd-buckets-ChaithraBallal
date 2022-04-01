@@ -40,10 +40,10 @@ char* CalculateCurrentRanges( int InputCurrentRange[], int NumberofCurrentSample
   return outputBuffer;  
 }
 
-int* funcA2DConverter(int InputAnalogCurrentValue[],int sizeofInput)
+float* funcA2DConverter(int InputAnalogCurrentValue[],int sizeofInput)
 {
   /*Assumption made -> the readings start from 0*/
-  int OutCurrent[sizeofInput];
+  float OutCurrent[sizeofInput];
   int i;
   for(i = 0; i < sizeofInput; i++)
   {
