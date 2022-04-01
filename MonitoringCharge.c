@@ -55,7 +55,7 @@ int* funcA2DConverter(int InputAnalogCurrentValue[],int sizeofInput)
     else
     {
        //OutCurrent[i] = (10 * InputAnalogCurrentValue[i])/MaxcurrentValue;  
-       OutCurrent[i] = round(OutCurrent[i]);
+       //OutCurrent[i] = round(OutCurrent[i]);
     }
     
   }
