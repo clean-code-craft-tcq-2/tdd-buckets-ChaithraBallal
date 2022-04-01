@@ -3,6 +3,7 @@
 #include "test/catch.hpp"
 
 #include <stdio.h>
+#include "assert.h"
 #include "string.h"
 #include "MonitoringCharge.h"
 
@@ -38,9 +39,9 @@ TEST_CASE("Verify A2D converter")
   int InputAnalogCurrentValue[] = {1504,2636,4092};
   int sizeofInput = sizeof(InputAnalogCurrentValue)/sizeof(InputAnalogCurrentValue[0]);
   float* OutputCurrentValue = funcA2DConverter(InputAnalogCurrentValue,sizeofInput);
-  ASSERT(OutputCurrentValue[0] == 3.67);
-  ASSERT(OutputCurrentValue[1] == 6.43);
-  ASSERT(OutputCurrentValue[2] == 9.99);
+  assert(OutputCurrentValue[0] == 3.67);
+  assert(OutputCurrentValue[1] == 6.43);
+  assert(OutputCurrentValue[2] == 9.99);
 }
 
 TEST_CASE("Verify A2D converter for invalid values")
@@ -48,7 +49,7 @@ TEST_CASE("Verify A2D converter for invalid values")
   int InputAnalogCurrentValue[] = {6000,9999,4095};
   int sizeofInput = sizeof(InputAnalogCurrentValue)/sizeof(InputAnalogCurrentValue[0]);
   float* OutputCurrentValue = funcA2DConverter(InputAnalogCurrentValue,sizeofInput);
-  ASSERT(OutputCurrentValue[0] == InvalidCurrentValue);
-  ASSERT(OutputCurrentValue[1] == InvalidCurrentValue);
-  ASSERT(OutputCurrentValue[2] == InvalidCurrentValue);
+  assert(OutputCurrentValue[0] == InvalidCurrentValue);
+  assert(OutputCurrentValue[1] == InvalidCurrentValue);
+  assert(OutputCurrentValue[2] == InvalidCurrentValue);
 }
