@@ -36,7 +36,7 @@ TEST_CASE("Find the higher out of the array")
 
 TEST_CASE("Verify A2D converter")
 {
-  int InputAnalogCurrentValue[] = {1146,4095};
+  int InputAnalogCurrentValue[] = {22,33};
   int sizeofInput = 2;
     //(sizeof(InputAnalogCurrentValue))/(sizeof(InputAnalogCurrentValue[0]));
   int* OutputCurrentValue = funcA2DConverter(InputAnalogCurrentValue,sizeofInput);
