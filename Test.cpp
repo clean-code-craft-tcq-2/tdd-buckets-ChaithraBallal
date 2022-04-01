@@ -38,9 +38,9 @@ TEST_CASE("Verify A2D converter")
   int InputAnalogCurrentValue[] = {1504,2636,4092};
   int sizeofInput = sizeof(InputAnalogCurrentValue)/sizeof(InputAnalogCurrentValue[0]);
   float* OutputCurrentValue = funcA2DConverter(InputAnalogCurrentValue,sizeofInput);
-  REQUIRE(OutputCurrentValue[0] == 3.67);
-  REQUIRE(OutputCurrentValue[1] == 6.43);
-  REQUIRE(OutputCurrentValue[2] == 9.99);
+  ASSERT(OutputCurrentValue[0] == 3.67);
+  ASSERT(OutputCurrentValue[1] == 6.43);
+  ASSERT(OutputCurrentValue[2] == 9.99);
 }
 
 TEST_CASE("Verify A2D converter for invalid values")
@@ -48,7 +48,7 @@ TEST_CASE("Verify A2D converter for invalid values")
   int InputAnalogCurrentValue[] = {6000,9999,4095};
   int sizeofInput = sizeof(InputAnalogCurrentValue)/sizeof(InputAnalogCurrentValue[0]);
   float* OutputCurrentValue = funcA2DConverter(InputAnalogCurrentValue,sizeofInput);
-  REQUIRE(OutputCurrentValue[0] == InvalidCurrentValue);
-  REQUIRE(OutputCurrentValue[1] == InvalidCurrentValue);
-  REQUIRE(OutputCurrentValue[2] == InvalidCurrentValue);
+  ASSERT(OutputCurrentValue[0] == InvalidCurrentValue);
+  ASSERT(OutputCurrentValue[1] == InvalidCurrentValue);
+  ASSERT(OutputCurrentValue[2] == InvalidCurrentValue);
 }
