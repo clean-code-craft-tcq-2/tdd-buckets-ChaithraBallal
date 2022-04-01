@@ -32,3 +32,12 @@ TEST_CASE("Find the higher out of the array")
   int HighValue = findUpperLimit(InputCurrentRange,NoofValues);
   REQUIRE(HighValue == 99);
 }
+
+TEST_CASE("Verify A2D converter")
+{
+  int InputAnalogCurrentValue[] = {15,26,19,99,9};
+  int sizeofInput
+  int OutputdigitalCurrentValue = funcA2DConverter(InputAnalogCurrentValue[]),);
+  int HighValue = findUpperLimit(InputCurrentRange,NoofValues);
+  REQUIRE(HighValue == 99);
+}
