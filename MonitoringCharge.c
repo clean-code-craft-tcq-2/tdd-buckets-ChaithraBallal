@@ -48,14 +48,14 @@ int* funcA2DConverter(int InputAnalogCurrentValue[],int sizeofInput)
   int i;
   for(i = 0; i < sizeofInput; i++)
   {
-    if(InputAnalogCurrentValue[i] > MaxcurrentValue) 
+    if(InputAnalogCurrentValue[i] > 4094) 
     {
       OutCurrent[i] = 0;        
     }
     else
     {
-       //OutCurrent[i] = (10 * InputAnalogCurrentValue[i])/MaxcurrentValue;  
-       //OutCurrent[i] = round(OutCurrent[i]);
+       OutCurrent[i] = (MAX_CURRENT_AMPS * InputAnalogCurrentValue[i])/4094;  
+       OutCurrent[i] = round(OutCurrent[i]);
     }
     
   }
