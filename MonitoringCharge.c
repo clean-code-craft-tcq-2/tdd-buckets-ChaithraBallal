@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "string.h"
 #include "MonitoringCharge.h"
+#include "math.h"
 
 int findLowerLimit(int currentRange[], int NoofCurrentValues)
 {
@@ -40,21 +41,23 @@ char* CalculateCurrentRanges( int InputCurrentRange[], int NumberofCurrentSample
   return outputBuffer;  
 }
 
-float* funcA2DConverter(int InputAnalogCurrentValue[],int sizeofInput)
+int* funcA2DConverter(int InputAnalogCurrentValue[],int sizeofInput)
 {
   /*Assumption made -> the readings start from 0*/
-  float OutCurrent[sizeofInput];
+  int OutCurrent[sizeofInput];
   int i;
   for(i = 0; i < sizeofInput; i++)
   {
-    if(InputAnalogCurrentValue[i] >= MaxcurrentValue) 
+    if(InputAnalogCurrentValue[i] > MaxcurrentValue) 
     {
       OutCurrent[i] = InvalidCurrentValue;        
     }
     else
     {
        OutCurrent[i] = (10 * InputAnalogCurrentValue[i])/MaxcurrentValue;  
+       OutCurrent[i] = round(OutCurrent[i]);
     }
+    
   }
   return OutCurrent;
 }
