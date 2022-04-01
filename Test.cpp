@@ -36,20 +36,11 @@ TEST_CASE("Find the higher out of the array")
 
 TEST_CASE("Verify A2D converter")
 {
-  int InputAnalogCurrentValue[] = {1504,2636,4092};
+  int InputAnalogCurrentValue[] = {1504,4095,4092};
   int sizeofInput = sizeof(InputAnalogCurrentValue)/sizeof(InputAnalogCurrentValue[0]);
   float* OutputCurrentValue = funcA2DConverter(InputAnalogCurrentValue,sizeofInput);
   assert(OutputCurrentValue[0] == 3.67);
-  assert(OutputCurrentValue[1] == 6.43);
+  assert(OutputCurrentValue[1] == InvalidCurrentValue);
   assert(OutputCurrentValue[2] == 9.99);
 }
 
-TEST_CASE("Verify A2D converter for invalid values")
-{
-  int InputAnalogCurrentValue[] = {6000,9999,4095};
-  int sizeofInput = sizeof(InputAnalogCurrentValue)/sizeof(InputAnalogCurrentValue[0]);
-  float* OutputCurrentValue = funcA2DConverter(InputAnalogCurrentValue,sizeofInput);
-  assert(OutputCurrentValue[0] == InvalidCurrentValue);
-  assert(OutputCurrentValue[1] == InvalidCurrentValue);
-  assert(OutputCurrentValue[2] == InvalidCurrentValue);
-}
