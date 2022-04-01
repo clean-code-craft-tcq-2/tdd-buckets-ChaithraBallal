@@ -35,9 +35,20 @@ TEST_CASE("Find the higher out of the array")
 
 TEST_CASE("Verify A2D converter")
 {
-  int InputAnalogCurrentValue[] = {15,26,19,99,9};
-  int sizeofInput
-  int OutputdigitalCurrentValue = funcA2DConverter(InputAnalogCurrentValue[]),);
-  int HighValue = findUpperLimit(InputCurrentRange,NoofValues);
-  REQUIRE(HighValue == 99);
+  int InputAnalogCurrentValue[] = {1504,2636,4092};
+  int sizeofInput = (sizeof(InputAnalogCurrentValue[]))/(sizeof(InputAnalogCurrentValue[0]));
+  int result;
+  char* OutputdigitalCurrentValue = funcA2DConverter(InputAnalogCurrentValue[]),sizeofInput);
+  int result = strcmp(OutputdigitalCurrentValue, "4,7,10");
+  REQUIRE(result == 0);
+}
+
+TEST_CASE("Verify A2D converter for invalid values")
+{
+  int InputAnalogCurrentValue[] = {-40,9999,4095};
+  int sizeofInput = (sizeof(InputAnalogCurrentValue[]))/(sizeof(InputAnalogCurrentValue[0]));
+  int result;
+  char* OutputdigitalCurrentValue = funcA2DConverter(InputAnalogCurrentValue[]),sizeofInput);
+  int result = strcmp(OutputdigitalCurrentValue, "Error");
+  REQUIRE(result == 0);
 }
