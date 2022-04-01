@@ -42,13 +42,14 @@ char* CalculateCurrentRanges( int InputCurrentRange[], int NumberofCurrentSample
 
 int* funcA2DConverter(int InputAnalogCurrentValue[],int sizeofInput)
 {
+  /*Assumption made -> the readings start from 0*/
   int OutCurrent[sizeofInput];
   int i;
   for(i = 0; i < sizeofInput; i++)
   {
-    if( (InputAnalogCurrentValue[i] >= MincurrentValue) && (InputAnalogCurrentValue[i] <= MaxcurrentValue) )
+    if(InputAnalogCurrentValue[i] <= MaxcurrentValue) 
     {
-     OutCurrent[i] = (InputAnalogCurrentValue[i]*10)/MaxcurrentValue;     
+      OutCurrent[i] = (InputAnalogCurrentValue[i]*10)/MaxcurrentValue;     
     }
     else
     {
