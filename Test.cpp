@@ -40,7 +40,7 @@ TEST_CASE("Verify A2D converter")
   int sizeofInput = 2;
     //(sizeof(InputAnalogCurrentValue))/(sizeof(InputAnalogCurrentValue[0]));
   int* OutputCurrentValue = funcA2DConverter(InputAnalogCurrentValue,sizeofInput);
-  REQUIRE(OutputCurrentValue[0] == 3);
+  REQUIRE(OutputCurrentValue[0] == 0);
   //REQUIRE(OutputCurrentValue[1] == InvalidCurrentValue);
 }
 
