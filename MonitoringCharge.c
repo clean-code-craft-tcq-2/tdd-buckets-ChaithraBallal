@@ -50,7 +50,7 @@ int* funcA2DConverter(int InputAnalogCurrentValue[],int sizeofInput)
   {
     if(InputAnalogCurrentValue[i] > MaxcurrentValue) 
     {
-      OutCurrent[i] = InvalidCurrentValue;        
+      OutCurrent[i] = 0;        
     }
     else
     {
