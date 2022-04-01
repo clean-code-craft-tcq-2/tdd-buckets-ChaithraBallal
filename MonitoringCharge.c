@@ -39,3 +39,21 @@ char* CalculateCurrentRanges( int InputCurrentRange[], int NumberofCurrentSample
   sprintf(outputBuffer, "%d-%d,%d",lowCurrentValue,highCurrentValue,NumberofCurrentSamples);
   return outputBuffer;  
 }
+
+int* funcA2DConverter(int InputAnalogCurrentValue[]),int sizeofInput)
+{
+  int OutCurrent[sizeofInput];
+  int i;
+  for(i = 0; i < sizeofInput; i++)
+  {
+    if(MincurrentValue <= InputAnalogCurrentValue[i] <= MaxcurrentValue)
+    {
+     OutCurrent[i] = (InputAnalogCurrentValue[i]*10)/MaxcurrentValue;     
+    }
+    else
+    {
+      OutCurrent[i] = InvalidCurrentValue;
+    }
+  }
+  return OutCurrent;
+}
